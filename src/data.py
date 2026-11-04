@@ -1,6 +1,6 @@
 import pandas as pd
 
-from .config import ROOT
+from src.config import ROOT
 
 
 def validate_dataframe(df, text_col="text", label_col="label"):

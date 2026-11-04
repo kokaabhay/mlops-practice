@@ -7,7 +7,7 @@ import numpy as np
 from fastapi import Depends, FastAPI
 from pydantic import BaseModel, Field, StringConstraints
 
-from .config import load_config
+from src.config import load_config
 
 Clause = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=10000)]
 

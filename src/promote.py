@@ -8,7 +8,7 @@ import mlflow
 from mlflow.exceptions import MlflowException
 from mlflow.tracking import MlflowClient
 
-from .config import load_config
+from src.config import load_config
 
 METRIC = "val_macro_f1"
 

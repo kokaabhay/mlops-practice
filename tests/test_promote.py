@@ -12,7 +12,7 @@ def test_first_model_becomes_champion(cfg, tiny_df):
     champ = client.get_model_version_by_alias(
         cfg["mlflow"]["registered_model_name"], cfg["mlflow"]["champion_alias"]
     )
-    assert champ.version == "1"
+    assert int(champ.version) == 1
 
 
 def test_equal_model_does_not_replace_champion(cfg, tiny_df):
@@ -25,7 +25,7 @@ def test_equal_model_does_not_replace_champion(cfg, tiny_df):
     champ = client.get_model_version_by_alias(
         cfg["mlflow"]["registered_model_name"], cfg["mlflow"]["champion_alias"]
     )
-    assert champ.version == "1"
+    assert int(champ.version) == 1
 
 
 def test_model_below_threshold_is_rejected(cfg, tiny_df):

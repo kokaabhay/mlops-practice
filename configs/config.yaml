@@ -1,0 +1,29 @@
+data:
+  raw_dir: data/raw
+  train_file: ledgar_train.csv
+  val_file: ledgar_validation.csv
+  test_file: ledgar_test.csv
+  text_column: text
+  label_column: label
+
+features:
+  max_features: 50000
+  ngram_range: [1, 2]
+  min_df: 2
+
+model:
+  C: 5.0
+  max_iter: 300
+  random_state: 42
+
+training:
+  max_train_samples: null   # set e.g. 5000 for a quick run
+
+mlflow:
+  tracking_uri: sqlite:///mlflow.db
+  experiment_name: legal-clause-classifier
+  registered_model_name: legal-clause-classifier
+  champion_alias: champion
+
+promotion:
+  min_val_macro_f1: 0.40    # adjust after you see your baseline

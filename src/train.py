@@ -7,8 +7,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.pipeline import Pipeline
 
-from .config import load_config
-from .data import load_split
+from src.config import load_config
+from src.data import load_split
 
 
 def build_pipeline(cfg):

@@ -1,7 +1,7 @@
 """Downloads LEDGAR from LexGLUE and writes CSVs to data/raw."""
 from datasets import load_dataset
 
-from .config import ROOT, load_config
+from src.config import ROOT, load_config
 
 
 def main():

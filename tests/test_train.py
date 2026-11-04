@@ -17,6 +17,7 @@ def test_train_logs_and_registers_model(cfg, tiny_df):
     client = MlflowClient()
     name = cfg["mlflow"]["registered_model_name"]
     versions = client.search_model_versions(f"name='{name}'")
-    assert len(versions) == 1
+    assert any(v.run_id == result["run_id"] for v in versions)
+
     metrics = client.get_run(result["run_id"]).data.metrics
     assert "val_macro_f1" in metrics and "test_macro_f1" in metrics
